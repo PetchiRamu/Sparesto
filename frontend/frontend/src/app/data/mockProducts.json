@@ -1,0 +1,58 @@
+[
+  {
+    "id": "p1",
+    "name": "Main Shaft Bearing",
+    "brand": "GE Renewable",
+    "oem": "GE-883-X1",
+    "price": 4850,
+    "price_display": "$4,850",
+    "image": "/product-placeholder-1.jpg",
+    "category": "Bearings & Gears",
+    "inStock": true,
+    "stock": 12,
+    "badge": "IN STOCK",
+    "description": "High-quality main shaft bearing for wind turbines."
+  },
+  {
+    "id": "p2",
+    "name": "Pitch Actuator H-44",
+    "brand": "Vestas Solutions",
+    "oem": "VST-44-ACT",
+    "price": 2120,
+    "price_display": "$2,120",
+    "image": "/product-placeholder-2.jpg",
+    "category": "Hydraulic Systems",
+    "inStock": false,
+    "stock": 2,
+    "badge": "LOW STOCK",
+    "description": "Robust pitch actuator for blade control systems."
+  },
+  {
+    "id": "p3",
+    "name": "Anemometer Pro v4",
+    "brand": "Siemens Energy",
+    "oem": "SIE-AN-990",
+    "price": 895,
+    "price_display": "$895",
+    "image": "/product-placeholder-3.jpg",
+    "category": "Sensors & Controls",
+    "inStock": true,
+    "stock": 30,
+    "badge": null,
+    "description": "High precision anemometer for wind speed measurement."
+  },
+  {
+    "id": "p4",
+    "name": "Power Inverter NX",
+    "brand": "Nordex Group",
+    "oem": "NX-PWR-INV",
+    "price": 12400,
+    "price_display": "$12,400",
+    "image": "/product-placeholder-4.jpg",
+    "category": "Turbine Components",
+    "inStock": true,
+    "stock": 5,
+    "badge": "NEW",
+    "description": "Reliable power inverter for turbine power conversion."
+  }
+]

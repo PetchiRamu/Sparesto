@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Theme variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter-sans); /* updated to Inter */
+  --font-mono: var(--font-inter-mono); /* updated to Inter Mono */
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Tailwind custom utilities */
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Body typography */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Poppins", "Roboto", "Source Sans Pro", Arial, Helvetica, sans-serif;
+}
+
+.watermark-overlay {
+  /* Unga logo path-ah inga kudunga */
+  background-image: url("/logo.png"); 
+  
+  background-repeat: repeat;
+  background-size: 100px; /* Logo size-ah inga control pannunga */
+  opacity: 0.1; /* Logo light-ah theriya opacity kammi pannunga */
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+}

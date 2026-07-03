@@ -1,0 +1,71 @@
+name: 🚀 windmillbackend Api-services (Self-hosted)
+
+on:
+  workflow_dispatch:  # Trigger manually from GitHub UI
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Linux, X64, sparestoaws]
+    name: Deploy windmillbackend Api-services to sparestoaws
+
+    defaults:
+      run:
+        working-directory: windmillbackend/api
+
+    steps:
+      - name: 📦 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 📂 Deploy to Persistent Folder
+        run: |
+          DEPLOY_DIR=/app/sites/sparesto.com/windmillbackend/api
+          
+          #echo "Current Working Directory: $PWD"
+          #ls -l
+          
+          mkdir -p "$DEPLOY_DIR"
+          
+          # Copy files
+          
+          # Continue with rest
+          cd "$DEPLOY_DIR"
+          
+          #remove old backup and creating new backup files
+          rm -f app.zip && (zip -r app.zip . -x "node_modules/*" || echo "No files to zip, skipping...")
+
+          #Delete everything except node_modules          
+          find . -mindepth 1 ! -name 'node_modules' ! -path './node_modules/*' ! -name 'app.zip' -exec rm -rf {} +
+
+          #copy from source code from githubrunner
+          rsync -avh /app/sites/sparesto.com/actions-runner/_work/sparesto.com/sparesto.com/windmillbackend/api/ ./
+          
+          #.env change
+          sed -i "s|^DB_PASSWORD=.*|DB_PASSWORD=\"Sp\@reSto123\!\"|" .env
+
+          # Load ROOT node + npm
+          export HOME=/root
+          export NVM_DIR=/root/.nvm
+          export PM2_HOME=/root/.pm2
+
+          source /root/.nvm/nvm.sh
+          nvm use 22
+
+          npm install
+                    
+      - name: 🚀 Restart PM2
+        run: |
+          cd /app/sites/sparesto.com/windmillbackend/api/
+
+          # Set PM2 env for correct user
+          export HOME=/root
+          export NVM_DIR=/root/.nvm
+          export PM2_HOME=/root/.pm2
+          source /root/.nvm/nvm.sh
+          nvm use 22
+
+          # Restart or start PM2          
+          pm2 stop Windmillbackend-Api-services-BackEnd || true
+          pm2 start server.js --name Windmillbackend-Api-services-BackEnd --max-memory-restart 200M --update-env
+
+          # Save PM2 process list
+          pm2 save

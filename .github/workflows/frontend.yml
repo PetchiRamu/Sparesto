@@ -1,0 +1,68 @@
+name: 🚀 frontend (Self-hosted)
+
+on:
+  workflow_dispatch:  # Trigger manually from GitHub UI
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Linux, X64, sparestoaws]
+    name: Deploy frontend to sparestoaws
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: 📦 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 📂 Deploy to Persistent Folder
+        run: |
+          DEPLOY_DIR=/app/sites/sparesto.com/frontend/
+          
+          #echo "Current Working Directory: $PWD"
+          #ls -l
+          
+          mkdir -p "$DEPLOY_DIR"
+          
+          # Copy files
+          
+          # Continue with rest
+          cd "$DEPLOY_DIR"
+
+          #Remove old .nextold backup .next   
+          [ -d .next ] && rm -rf .next-old && mv .next .next-old || echo ".next folder not found, skipping rename"
+          
+          #Delete everything except node_modules and .next         
+          find . -mindepth 1 ! -name 'node_modules' ! -path './node_modules/*' ! -name '.next-old' ! -path './.next-old/*' -exec rm -rf {} +
+     
+          #copy from source code from githubrunner
+          rsync -avh /app/sites/sparesto.com/actions-runner/_work/sparesto.com/sparesto.com/frontend/ ./
+          
+          # Load ROOT node + npm
+          export HOME=/root
+          export NVM_DIR=/root/.nvm
+          export PM2_HOME=/root/.pm2
+
+          source /root/.nvm/nvm.sh
+          nvm use 22
+
+          npm install        
+          npm run build
+          
+      - name: 🚀 Restart PM2
+        run: |
+          cd /app/sites/sparesto.com/frontend/
+
+          # Set PM2 env for correct user
+          export HOME=/root
+          export NVM_DIR=/root/.nvm
+          export PM2_HOME=/root/.pm2
+          source /root/.nvm/nvm.sh
+          nvm use 22
+
+          pm2 restart Frontend-App || pm2 start npm --name Frontend-App -- start
+
+          # Save PM2 process list
+          pm2 save
+         
