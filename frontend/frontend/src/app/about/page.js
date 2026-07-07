@@ -80,6 +80,9 @@ export default function AboutPage() {
           className="h-[500px] w-full rounded-2xl object-cover shadow-lg"
         />
       </div>
+
+
+      
     </div>
   </div>
 </section>

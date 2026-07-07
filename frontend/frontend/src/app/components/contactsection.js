@@ -65,7 +65,7 @@ export default function ContactSection() {
           </h2>
 
           <p className="mx-auto max-w-3xl text-base text-slate-600 leading-8">
-            Reach out for procurement queries, partnership opportunities, or to
+            Reach out for procurement queries, partnership opportunities or to
             a customized quote tailored to your requirements.
           </p>
         </div>
@@ -74,9 +74,13 @@ export default function ContactSection() {
           {/* Left Side */}
           <div className="space-y-6">
             <div className="rounded-[2rem] border border-[#D8F0EE] bg-white p-8 shadow-sm">
-              <p className="text-sm uppercase tracking-[0.35em] text-slate-40 text-[#0F8E84]">
+              {/* <p className="text-sm uppercase tracking-[0.35em] text-slate-40 text-[#0F8E84]">
                 Sparesto Solutions Private Limited
-              </p>
+              </p> */}
+
+              <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#0A6D66]">
+  Sparesto Solutions Private Limited
+</p>
 
               <div className="mt-8 space-y-6 text-slate-700">
                 <div className="flex items-start gap-4">
@@ -175,8 +179,8 @@ export default function ContactSection() {
 
           {/* Right Side */}
           <div className="rounded-[2rem] border border-[#D8F0EE] bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold text-slate-900 mb-5">
-              Start a conversation
+            <h3 className="text-2xl font-semibold mb-5 text-[#0A6D66]">
+              Start The conversation
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -239,7 +243,7 @@ export default function ContactSection() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                placeholder="How can we help you?"
+                placeholder="Share Your Requirements..."
                 className="w-full resize-none rounded-3xl border border-[#D8F0EE] bg-[#F7FBFB] px-4 py-3 text-sm outline-none focus:border-[#0E8E84] focus:ring-2 focus:ring-[#E8F6F3]"
               />
 

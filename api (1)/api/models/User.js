@@ -13,7 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
+        unique: true,
+        set(value) {
+          if (value) {
+            this.setDataValue('email', value.toLowerCase());
+          }
+        }
       },
 
       phone: {
@@ -25,6 +30,12 @@ module.exports = (sequelize, DataTypes) => {
       password: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+
+      role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'Admin'
       },
 
       otp: {
@@ -39,6 +50,14 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'Users'
     }
   );
+
+  User.prototype.toJSON = function () {
+    const values = Object.assign({}, this.get());
+    delete values.password;
+    delete values.otp;
+    delete values.otpExpire;
+    return values;
+  };
 
   return User;
 

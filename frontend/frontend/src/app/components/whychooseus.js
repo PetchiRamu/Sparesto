@@ -138,15 +138,19 @@ export default function WhyChooseUs() {
           {/* Right Content */}
           <div className="order-2">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-[#006D68]">Why Choose </span>
+              <span className="text-[#006D68]">Why Choose Us </span>
               <span className="text-[#2DB7B0]">Sparesto</span>
               <br />
               {/* <span className="text-[#006D68]">Solutions</span> */}
             </h2>
 
-            <p className="mt-4 md:mt-6 text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+            {/* <p className="mt-4 md:mt-6 text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
              Reliable Procurement. Efficient Supply Chains. Exceptional Results.
-            </p>
+            </p> */}
+
+            <p className="mt-4 md:mt-6 text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed font-bold">
+  Reliable Procurement.  Efficient Supply Chains.  Exceptional Results.
+</p>
 
             {/* Top 4 Cards */}
             <div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">

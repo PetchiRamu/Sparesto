@@ -5,14 +5,14 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 
 const serviceOptions = [
- "Strategic Sourcing & Procurement",
- "Manpower Service",
-"E-Auction",
+  "Strategic Sourcing & Procurement",
+  "Manpower Service",
+  "E-Auction",
 
-    "Component Testing & Servicing",
-    
-    
-    "Inventory Liquidation", 
+  "Component Testing & Servicing",
+
+
+  "Inventory Liquidation",
 ];
 
 export default function ContactUs() {
@@ -43,14 +43,14 @@ export default function ContactUs() {
 
       <main className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="space-y-4 text-center mb-12">
-          <span className="inline-flex rounded-full bg-[#E8F8F6] px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-[#0F8E84]">
+          <span className="inline-flex rounded-full bg-[#E8F8F6] px-4 py-1 text-sm font-semibold uppercase tracking-[0.35em] text-[#0F8E84]">
             Contact Us
           </span>
           <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
             Let's Work Together
           </h1>
           <p className="mx-auto max-w-3xl text-base text-slate-600 leading-8">
-            Reach out for procurement queries, partnership opportunities, or to
+            Reach out for procurement queries, partnership opportunities or to
             a customized quote tailored to your requirements.
           </p>
         </div>
@@ -58,8 +58,8 @@ export default function ContactUs() {
         <div className="grid gap-8 xl:grid-cols-[0.95fr_1.05fr] items-start">
           <div className="space-y-6">
             <div className="rounded-[2rem] border border-[#D8F0EE] bg-white p-8 shadow-sm">
-              
-<p className="text-sm uppercase tracking-[0.35em] text-slate-40 text-[#0F8E84]">
+
+              <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#0A6D66]">
                 Sparesto Solutions Private Limited
               </p>
 
@@ -72,16 +72,12 @@ export default function ContactUs() {
                     </svg>
                   </div>
 
-                  
                   <div>
                     <p className="text-sm font-semibold text-slate-900">Registered Office Address</p>
                     <p className="mt-1 text-sm text-slate-600">110/A3-6, Valliyoor, Radhapuram Tirunelveli – 627111, Tamil Nadu, India</p>
                   </div>
 
-                  
-                  
 
-                  
                 </div>
 
                 <div className="flex items-start gap-4">
@@ -92,7 +88,7 @@ export default function ContactUs() {
                     </svg>
                   </div>
 
-                  
+
                   <div>
                     <p className="text-sm font-semibold text-slate-900">Business Address</p>
                     <p className="mt-1 text-sm text-slate-600">
@@ -106,12 +102,7 @@ export default function ContactUs() {
                     </p>
                   </div>
 
-                  
-                  
-
-                  
                 </div>
-                
 
                 <div className="flex items-start gap-4">
                   <div className="mt-1 rounded-2xl bg-[#E8F8F6] p-3 text-[#0F8E84]">
@@ -156,8 +147,8 @@ export default function ContactUs() {
           </div>
 
           <div className="rounded-[2rem] border border-[#D8F0EE] bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-slate-900 mb-5">Start a conversation
-</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 mb-5">Start The conversation
+            </h2>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid gap-4 sm:grid-cols-2">
@@ -200,7 +191,7 @@ export default function ContactUs() {
                   />
                 </label>
                 <label className="block text-sm font-semibold text-slate-700">
-                  Phone
+                  Phone*
                   <input
                     type="tel"
                     name="phone"
@@ -235,7 +226,7 @@ export default function ContactUs() {
                   required
                   rows={5}
                   className="w-full rounded-3xl border border-[#D8F0EE] bg-[#F7FBFB] px-4 py-3 text-sm text-slate-900 outline-none focus:border-[#0E8E84] focus:ring-2 focus:ring-[#E8F6F3] resize-none"
-                  placeholder="How can we help you?"
+                  placeholder="Share Your Requirements.."
                 />
               </div>
 
@@ -254,10 +245,10 @@ export default function ContactUs() {
             </form>
           </div>
         </div>
-        
+
       </main>
 
-      
+
     </div>
   );
 }

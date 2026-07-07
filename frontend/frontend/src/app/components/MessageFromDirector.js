@@ -196,7 +196,7 @@ export default function MessageFromDirector() {
           {/* Main Leader Content */}
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[3px] text-teal-700">
-              Leadership
+              Leader
             </p>
 
             <h2 className="mb-8 text-4xl font-bold leading-tight text-slate-900 md:text-6xl">

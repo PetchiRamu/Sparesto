@@ -26,9 +26,9 @@ export default function Header() {
       submenu: [
         { name: "Procurement", href: "/services/ecommerce" },
         { name: "Manpower Services", href: "/services/manpowerservices" },
-        { name: "Eauction", href: "/services/e-auction" },
+        { name: "E-Auction", href: "/services/e-auction" },
         { name: "Component Testing & Servicing", href: "/services/sparesservices" },
-        { name: "inventory liquidation", href: "/sellourproduct" }, 
+        { name: "Inventory Liquidation", href: "/sellourproduct" }, 
       ],
     },
     { name: "Trade In Your Spare", href: "/sellourproduct " },

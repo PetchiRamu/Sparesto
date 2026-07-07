@@ -1,5 +1,5 @@
 const { Sequelize } = require("sequelize");
-const mysql2 = require("mysql2"); // Required to prevent Next.js bundler errors
+const mysql2 = require("mysql2"); 
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -7,8 +7,8 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
-    dialect: "mysql",          // <-- Changed from "postgres" to "mysql"
-    dialectModule: mysql2,     // <-- Added this to help Next.js find the driver
+    dialect: "mysql",         
+    dialectModule: mysql2,     
     logging: false
   }
 );

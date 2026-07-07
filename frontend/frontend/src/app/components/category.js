@@ -243,7 +243,7 @@ const services = [
     link: "/cost-optimization",
   },
   {
-    title: "Manpower Supply",
+    title: "Manpower Services",
     description:
       "Skilled and reliable workforce to support your project and operational needs.",
     icon: Users,

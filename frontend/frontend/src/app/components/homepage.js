@@ -47,6 +47,7 @@ export default function Home() {
     backgroundImage: "url('/bannerimg.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    filter: "brightness(1.8)", // 20% brighter
   }}
 >
 
@@ -144,7 +145,7 @@ procurement and tailored solutions.
         </div>
 
         <h3 className="text-white text-lg font-medium">
-          Manpower Supply
+          Manpower Services
         </h3>
 
       </div>

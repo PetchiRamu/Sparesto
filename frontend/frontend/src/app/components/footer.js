@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <Link href="#">Manpower Supply</Link>
+                <Link href="#">Manpower Services</Link>
               </li>
 
               <li>
@@ -86,7 +86,7 @@ export default function Footer() {
                 <Link href="# ">Component Testing & Servicing</Link>
               </li>
               <li>
-                <Link href="# ">inventory liquidation</Link>
+                <Link href="# ">Inventory Liquidation</Link>
               </li>
             </ul>
           </div>

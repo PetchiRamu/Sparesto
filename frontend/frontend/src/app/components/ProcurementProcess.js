@@ -58,7 +58,7 @@ export default function ProcurementProcess() {
         </h2>
 
         <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-white/80">
-          uctured approach, transparent process, efficient
+          
           A structured approach, transparent process, efficient
           execution and reliable service.
         </p>
